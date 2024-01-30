@@ -1,5 +1,5 @@
 # Automate360
 Automation Applications
 
-Developer
+Developer(s)
 - Ashwin Kumar R
