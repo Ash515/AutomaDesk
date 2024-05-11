@@ -4,7 +4,7 @@ import sqlite3
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
-#Defining class FileOrganiserApp
+#Defining class AutometaDesk:
 class AutometaDesk:
     def __init__(self, master):
         self.master = master
