@@ -5,5 +5,8 @@ A tool that organizes files and folders based on pre-defined rules. This can sav
 - Python - Tkinter
 - SQlite
 
-Developer(s)
+## Project Admin
+- Ashwin Kumar R
+
+## Developer(s)
 - Ashwin Kumar R
