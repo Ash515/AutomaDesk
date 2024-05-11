@@ -8,7 +8,7 @@ from tkinter import filedialog, messagebox
 class AutometaDesk:
     def __init__(self, master):
         self.master = master
-        self.master.title("File Organizer")
+        self.master.title("AutometaDesk")
         self.master.geometry("400x200")
 
         self.label = tk.Label(master, text="Select directory to organize:")
@@ -24,7 +24,7 @@ class AutometaDesk:
 
     def organize_files(self):
         # Connect to the SQLite database
-        conn = sqlite3.connect("file_organizer_rules.db")
+        conn = sqlite3.connect("AutometaDesk.db")
         cursor = conn.cursor()
 
         # Create table if it doesn't exist
