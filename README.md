@@ -10,3 +10,6 @@ A tool that organizes files and folders based on pre-defined rules. This can sav
 
 ## Developer(s)
 - Ashwin Kumar R
+
+## Communication Server
+https://discord.gg/XsYcNdFm46
