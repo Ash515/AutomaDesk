@@ -38,3 +38,9 @@ https://discord.gg/XsYcNdFm46
 
 ## Developer(s)
 - Ashwin Kumar R
+
+## GitHub Topics
+These topics help users discover relevant projects on GitHub:
+Python, Tkinter, SQlite
+file-management, file-organization,
+file-renaming, gui
