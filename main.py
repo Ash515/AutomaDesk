@@ -1,3 +1,4 @@
+# Import necessary modules
 import os
 import shutil
 import tkinter as tk
@@ -124,11 +125,7 @@ def rename_button1():
     new_filename = new_filename_entry.get()
 
     if not selected_file:
-        messagebox.showerror("Error", "Please select a file.")
-        return
-
-    if not new_filename:
-        messagebox.showerror("Error", "Please enter a new filename.")
+        messagebox.showerror("Error", "Please select a file to rename.")
         return
 
     try:
@@ -139,12 +136,13 @@ def rename_button1():
         new_filename_entry.delete(0, tk.END)
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {str(e)}")
-        
+
 def browse_file():
-    # Open file dialog to select a file
+# Open file dialog to select a file
     file_path = filedialog.askopenfilename()
     if file_path:
         file_var.set(file_path)
+
 # Function to handle search button click event
 def search_button():
     search_term = entry_search.get().strip()
@@ -168,67 +166,102 @@ def search_button():
 window = tk.Tk()
 window.title("File Organizer")
 
+# Set background color for the main window
+window.configure(bg='light blue')
+
 # Define GUI elements
-label_path = tk.Label(window, text="Source Directory:")
+
+# Frame for file organization
+organize_frame = tk.Frame(window)
+organize_frame.config(bg='light blue')  # Set background color
+organize_frame.grid(row=7, column=0, columnspan=5, padx=5, pady=5, sticky="w")
+
+
+# Define GUI elements
+label_path = tk.Label(window, text="Source Directory:",bg="lightblue")
 label_path.grid(row=0, column=0, padx=5, pady=5, sticky="w")
 
 entry_path = tk.Entry(window, width=50)
 entry_path.grid(row=0, column=1, padx=5, pady=5)
 
-button_browse = tk.Button(window, text="Browse", command=browse_button)
+button_browse = tk.Button(window, text="Browse", command=browse_button,bg="lightgreen")
 button_browse.grid(row=0, column=2, padx=5, pady=5)
 
-label_ext = tk.Label(window, text="File Extension:")
-label_ext.grid(row=1, column=0, padx=5, pady=5, sticky="w")
-entry_ext = tk.Entry(window, width=10)
-entry_ext.grid(row=1, column=1, padx=5, pady=5)
+# Frame for file rename functionality
+rename_frame = tk.Frame(window,bg="lightblue")
+rename_frame.grid(row=4, column=0, columnspan=5, padx=5, pady=5, sticky="w")
 
-label_dest = tk.Label(window, text="Destination Folder:")
-label_dest.grid(row=1, column=2, padx=5, pady=5, sticky="w")
-entry_dest = tk.Entry(window, width=50)
-entry_dest.grid(row=1, column=3, padx=5, pady=5)
-
-button_save = tk.Button(window, text="Save Rule", command=save_button)
-button_save.grid(row=1, column=4, padx=5, pady=5)
-
-button_delete = tk.Button(window, text="Delete Rule", command=delete_button)
-button_delete.grid(row=1, column=5, padx=5, pady=5)
-
-label_rules = tk.Label(window, text="Current Rules:")
-label_rules.grid(row=2, column=0, padx=5, pady=5, sticky="w")
-listbox_rules = tk.Listbox(window, width=60, height=10)
-listbox_rules.grid(row=3, column=0, columnspan=5, padx=5, pady=5, sticky="w")
-update_rules_list()
-
-
-
-button_organize = tk.Button(window, text="Organize Files", command=organize_button)
-button_organize.grid(row=10, column=1, columnspan=3, padx=5, pady=5)
-
-
-
-file_label = tk.Label(window, text="File:")
-file_label.grid(row=4, column=0, padx=5, pady=5, sticky="w")
+label_file = tk.Label(rename_frame, text="Selected File:",bg="lightblue")
+label_file.grid(row=0, column=0, padx=5, pady=5, sticky="w")
 
 file_var = tk.StringVar()
-file_entry = tk.Entry(window, textvariable=file_var, state='readonly', width=40)
-file_entry.grid(row=4, column=0, columnspan=3, padx=5, pady=5)
+file_entry = tk.Entry(rename_frame, textvariable=file_var, state='readonly', width=40)
+file_entry.grid(row=0, column=1, padx=5, pady=5, columnspan=3)
 
-# Browse button
-browse_button = tk.Button(window, text="Browse", command=browse_file)
-browse_button.grid(row=4, column=1, columnspan=3, padx=5, pady=5)
+browse_button = tk.Button(rename_frame, text="Browse", command=browse_file,bg="lightgreen")
+browse_button.grid(row=0, column=4, padx=5, pady=5)
 
-# New filename label and entry
-new_filename_label = tk.Label(window, text="New Filename:")
-new_filename_label.grid(row=6, column=0, padx=5, pady=5, sticky="w")
+label_new_filename = tk.Label(rename_frame, text="New Filename:",bg="lightblue")
+label_new_filename.grid(row=1, column=0, padx=5, pady=5, sticky="w")
 
-new_filename_entry = tk.Entry(window, width=40)
-new_filename_entry.grid(row=6, column=0, columnspan=3, padx=5, pady=5)
+new_filename_entry = tk.Entry(rename_frame, width=40)
+new_filename_entry.grid(row=1, column=1, padx=5, pady=5, columnspan=3)
 
-# Rename button
-rename_button = tk.Button(window, text="Rename", command=rename_button1)
-rename_button.grid(row=6, column=1, columnspan=3, padx=5, pady=5)
+rename_button = tk.Button(rename_frame, text="Rename", command=rename_button1,bg="lightgreen")
+rename_button.grid(row=1, column=4, padx=5, pady=5)
 
-# Start the Tkinter event loop
+# Frame for search functionality
+search_frame = tk.Frame(window,bg="lightblue")
+search_frame.grid(row=5, column=0, columnspan=5, padx=5, pady=5,sticky="w")
+
+label_search = tk.Label(search_frame, text="Search Files:",bg="lightblue") 
+label_search.grid(row=0, column=0, padx=5, pady=5, sticky="w")
+
+entry_search = tk.Entry(search_frame, width=50) 
+entry_search.grid(row=0, column=1, padx=5, pady=5, columnspan=3)
+
+search_button = tk.Button(search_frame, text="Search", command=search_button,bg="lightgreen") 
+search_button.grid(row=0, column=4, padx=5, pady=5)
+
+rules_frame = tk.Frame(window,bg="lightblue") 
+rules_frame.grid(row=6, column=0, columnspan=5, padx=5, pady=5, sticky="w")
+
+label_ext = tk.Label(rules_frame, text="File Extension:",bg="lightblue") 
+label_ext.grid(row=0, column=0, padx=5, pady=5, sticky="w") 
+entry_ext = tk.Entry(rules_frame, width=10) 
+entry_ext.grid(row=0, column=1, padx=5, pady=5)
+
+label_dest = tk.Label(rules_frame, text="Destination Folder:",bg="lightblue") 
+label_dest.grid(row=0, column=2, padx=5, pady=5, sticky="w") 
+entry_dest = tk.Entry(rules_frame, width=50) 
+entry_dest.grid(row=0, column=3, padx=5, pady=5, columnspan=2)
+
+save_button = tk.Button(rules_frame, text="Save Rule", command=save_button,bg="lightgreen") 
+save_button.grid(row=1, column=0, padx=5, pady=5)
+
+delete_button = tk.Button(rules_frame, text="Delete Rule", command=delete_button,bg="lightgreen") 
+delete_button.grid(row=1, column=1, padx=5, pady=5)
+
+label_rules = tk.Label(rules_frame, text="Current Rules:",bg="lightblue") 
+label_rules.grid(row=2, column=0, padx=5, pady=5, sticky="w") 
+listbox_rules = tk.Listbox(rules_frame, width=60, height=10) 
+listbox_rules.grid(row=3, column=0, columnspan=5, padx=5, pady=5, sticky="w")
+
+update_rules_list()
+
+organize_frame = tk.Frame(window,bg="lightblue") 
+organize_frame.grid(row=7, column=0, columnspan=5, padx=5, pady=5, sticky="w")
+
+label_organize = tk.Label(organize_frame, text="Organize Files:",bg="lightblue") 
+label_organize.grid(row=0, column=0, padx=5, pady=5, sticky="w")
+
+entry_path = tk.Entry(organize_frame, width=50) 
+entry_path.grid(row=0, column=1, padx=5, pady=5, columnspan=3)
+
+browse_button = tk.Button(organize_frame, text="Browse", command=browse_button,bg="lightgreen") 
+browse_button.grid(row=0, column=4, padx=5, pady=5)
+
+organize_button = tk.Button(organize_frame, text="Organize Files", command=organize_button,bg="lightgreen") 
+organize_button.grid(row=1, column=0, padx=5, pady=5, columnspan=5)
+
 window.mainloop()
-
