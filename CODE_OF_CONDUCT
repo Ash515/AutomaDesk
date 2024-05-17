@@ -1,0 +1,60 @@
+# AutomaDesk - GSSoC Contributors Code of Conduct
+
+## Our Pledge
+
+We are committed to creating a diverse and inclusive community where everyone feels respected and valued.This code of conduct outlines the expectations for all participants and the steps we will take to enforce them. Any unexpected behaviour will lead to take actions on them.
+
+## Our Standards
+
+The following are the examples of behaviour that create a positive and friendly environment
+
+Be respectful: Treat all contributors with courtesy and avoid discriminatory or offensive language.
+Be constructive: Offer helpful feedback and suggestions for improvement.
+Be open-minded: Consider different perspectives and approaches.
+Be responsible: Report any abusive or harassing behavior to the project maintainers.
+Be collaborative: Work together to achieve the project's goals.
+
+## Our Responsibilities 
+
+Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.
+
+Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful.
+
+Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.
+
+## ❌ You'll never get issue assigned
+
+- I want to work on this issue please assign it to me, I'll enhance UI
+
+- _Create an AI generated issue _and ask to assign
+
+
+## ✅ You'll easily get issue assigned
+
+- Hi, I know the fix for this issue, the code is breaking because of the useEffect we have added there, instead of that we need to use UseLayoutEffect, I can fix it within **ETA**: 1day.
+- Hi, I seen a UI enhancement in category section of the website, here goes my sample UX/images <_link>_. And I want to pick this issue
+
+
+
+## 💡Prop tip from the Project Admin (Me 😜)
+- I am happy to provide you the points you need to reach the leaderboard, I look forward to give more points than needed if required, but the minimum I expect is your genuine interest to solve the issue and contribute.
+- Want GSSoC points? Not the right place for you. Want to learn things and master git place for you, and forget about points you'll get more than expected
+- I'm happy to help anyone who is really concerned in learning, _**but please don't spam 100s of project with your random message**_, Stick to 2-3 projects of your like and work on it.
+- Didn't get any issue to work on? Just join the project's discord in readme. I'll help you find one :)
+- Happy learning. Feel free to connect if you are concerned with learning and growing 😊
+
+
+---
+
+
+## For those who have time read below
+### Issue Assignment Process
+- **Preparation**: Contributors must thoroughly investigate issues before expressing interest.
+- **ETA**: Provide an estimated time of completion for the issue.
+- **Approach**: Describe the planned method or solution to resolve the issue.
+### Communication
+- **Expression of Interest**: Contributors should demonstrate their understanding and readiness to tackle the issue, rather than simply requesting assignment.
+### Restrictions
+- **AI-Based Issue Creation**: The use of AI to generate issues is strictly discouraged.
+- **Handling Existing Issues**: Contributors are encouraged to focus on resolving existing issues rather than creating new, unnecessary ones.
+
