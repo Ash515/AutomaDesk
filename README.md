@@ -100,3 +100,19 @@ Consider creating a standalone executable using tools like PyInstaller to distri
 
 ## Communication Server
 https://discord.gg/XsYcNdFm46
+
+## 📊 File Type Analyzer
+
+A new feature to analyze file types in a given directory.
+
+### 🔹 What it does
+- Scans all files in a folder (including subfolders)
+- Counts different file types (.py, .txt, .csv, etc.)
+- Displays total files and percentage distribution
+- Shows results in sorted format
+
+### ▶️ How to use
+Run the script:
+
+```bash
+python file_analysis.py
